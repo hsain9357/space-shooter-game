@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+}
+body {
+  background: #000;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+#failedVideo {
+  height: 110vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: 0;
+  object-fit: cover;
+  bottom: 0;
+  display: none;
+}
+#startGame {
+  height: 4rem;
+  width: 10rem;
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 40%;
+  font-weight: 700;
+  color: white;
+  background: #00c956;
+}
+.pointCollected {
+  position: fixed;
+  z-index: 40;
+  height: 3em;
+  width: 10em;
+  left: 50%;
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  color: white;
+  transform: translateX(-50%);
+  top: 1em;
+  background: #698f1a10;
+  backdrop-filter: blur(10px);
+}
+.bg {
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  position: relative;
+}
+.bg-img {
+  height: 100%;
+  width: 100%;
+  margin-top: -0.3em;
+  z-index: -1;
+  padding: 0;
+  position: absolute;
+  object-fit: cover;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.planit {
+  position: absolute;
+  z-index: 10;
+  height: 100px;
+  width: 100px;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, 40%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+}
+.planit .plant-img {
+  height: 100px;
+  width: 100px;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+.planit .fires {
+  position: absolute;
+  right: 1.5em;
+  top: 0;
+  animation: firesAni linear infinite;
+  animation-duration: 0.19s;
+}
+.fires:nth-of-type(2) {
+  left: 1.5em;
+}
+@keyframes firesAni {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+.cloudsContainer {
+  top: 0;
+  height: 110%;
+  width: 100vw;
+  position: absolute;
+  overflow: hidden;
+}
+
+.cloudsContainer .clouds {
+  position: absolute;
+  z-index: 23;
+  animation: cloudsAni 15s linear infinite;
+}
+
+@keyframes cloudsAni {
+  0% {
+    transform: translateY(-10vh);
+  }
+  100% {
+    transform: translateY(155vh);
+  }
+}
+
+.rendomAliens {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: 9;
+}
+.rendomAliens .alien {
+  position: absolute;
+  height: 100px;
+  width: 80px;
+  background-image: url("./assets/imgs/alien.png");
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-position: center;
+  transition: top 0.5s steps(40), background-image 0.1s;
+}
